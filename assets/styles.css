@@ -1,0 +1,954 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+@font-face {
+  font-family: 'avenir';
+  src: url("fonts/Avenir.otf"); }
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none !important; }
+
+body {
+  background: #777; }
+
+.wrap {
+  max-width: 1286px;
+  margin: 0 auto; }
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  height: 72px;
+  background-color: #fff;
+  transition: transform 0.8s cubic-bezier(0.6, 0, 0.4, 1);
+  will-change: transform; }
+  .header .header-content {
+    max-width: 1286px;
+    margin: 0 auto; }
+    .header .header-content .logo {
+      background-color: #E60012;
+      float: left;
+      padding: 55px 30px 25px;
+      border-radius: 0 0 15px 15px;
+      box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
+      position: absolute;
+      z-index: 100;
+      transform: translateY(-26px);
+      transition: transform 500ms cubic-bezier(0.215, 0.61, 0.355, 1);
+      will-change: transform; }
+      .header .header-content .logo:hover {
+        transform: translateY(-10px);
+        transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .header .header-content ul li {
+      float: left; }
+    .header .header-content ul.search-region-login {
+      text-align: right;
+      margin-top: 5px;
+      margin-bottom: 3px;
+      padding-right: 15px;
+      float: right; }
+      .header .header-content ul.search-region-login li {
+        float: none;
+        display: inline-block;
+        color: #999;
+        margin: 0 0 0 20px; }
+        .header .header-content ul.search-region-login li input {
+          -webkit-appearance: none;
+          outline: none;
+          border-radius: 20px;
+          width: 370px;
+          height: 34px;
+          box-shadow: none;
+          border: none;
+          border: 1px solid #ccc;
+          padding: 0 55px 0 10px; }
+        .header .header-content ul.search-region-login li .fa-search {
+          position: relative;
+          right: 45px;
+          color: #999;
+          font-size: 24px;
+          top: 3px;
+          cursor: pointer; }
+          .header .header-content ul.search-region-login li .fa-search:hover {
+            color: #00d2be; }
+        .header .header-content ul.search-region-login li .fa-user {
+          font-size: 18px;
+          margin-right: 5px;
+          position: relative;
+          top: 2px; }
+        .header .header-content ul.search-region-login li .us-flag {
+          width: 32px;
+          margin-left: 10px;
+          position: relative;
+          bottom: 2px; }
+        .header .header-content ul.search-region-login li a {
+          font-size: 13px;
+          color: #999; }
+          .header .header-content ul.search-region-login li a:hover {
+            color: #00d2be; }
+        .header .header-content ul.search-region-login li:nth-child(2) {
+          margin-left: 0px; }
+  .header .nav {
+    background: linear-gradient(#f5f5f5, #dadada);
+    clear: both;
+    height: 30px; }
+    .header .nav .flex-wrap {
+      display: flex;
+      max-width: 1286px;
+      margin: 0 auto;
+      justify-content: space-around;
+      padding-left: 180px;
+      height: 100%; }
+      .header .nav .flex-wrap li {
+        display: block;
+        height: 100%;
+        width: 15%;
+        text-align: center;
+        transition: color 0.3s, background 0.3s; }
+        .header .nav .flex-wrap li.switch {
+          width: 17%; }
+          .header .nav .flex-wrap li.switch:hover {
+            background-color: #fff; }
+            .header .nav .flex-wrap li.switch:hover a {
+              color: #333; }
+        .header .nav .flex-wrap li.threeds:hover {
+          background-color: #CE181E; }
+        .header .nav .flex-wrap li.wiiu {
+          width: 8%; }
+          .header .nav .flex-wrap li.wiiu:hover {
+            background-color: #0096C8; }
+        .header .nav .flex-wrap li.gamestore {
+          width: 13%; }
+          .header .nav .flex-wrap li.gamestore:hover {
+            background-color: #FF7D00; }
+        .header .nav .flex-wrap li.amiibo {
+          width: 9%; }
+          .header .nav .flex-wrap li.amiibo:hover {
+            background-color: #fff; }
+            .header .nav .flex-wrap li.amiibo:hover a {
+              color: #333; }
+        .header .nav .flex-wrap li.support {
+          width: 9%; }
+        .header .nav .flex-wrap li.playnintendo:hover {
+          background-color: #FF3F3F; }
+        .header .nav .flex-wrap li.support:hover {
+          background-color: #00BFF3; }
+        .header .nav .flex-wrap li.mynintendo {
+          width: 14%; }
+          .header .nav .flex-wrap li.mynintendo:hover {
+            background-color: #fff; }
+            .header .nav .flex-wrap li.mynintendo:hover a {
+              color: #333; }
+        .header .nav .flex-wrap li a {
+          color: #999;
+          display: block;
+          padding-top: 5px;
+          height: 100%;
+          transition: color 0.3s; }
+        .header .nav .flex-wrap li:hover a {
+          color: #fff; }
+        .header .nav .flex-wrap li.w-dropdown:hover .dropdown {
+          display: block; }
+      .header .nav .flex-wrap .dropdown {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        animation: fade-in .3s;
+        display: none;
+        overflow: hidden;
+        padding: 0 20px;
+        transition-delay: .3s; }
+        .header .nav .flex-wrap .dropdown img.dropdown-art {
+          position: absolute;
+          animation-delay: 1s; }
+        .header .nav .flex-wrap .dropdown .dropdown-grid {
+          max-width: 960px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+          padding: 38px 0 19px; }
+          .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col {
+            width: 220px;
+            margin-right: 15px; }
+            .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .grid-block {
+              width: 100%;
+              color: #fff;
+              border-radius: 20px;
+              background-color: #E60012;
+              height: 215px;
+              margin-bottom: 20px;
+              position: relative;
+              overflow: hidden !important; }
+              .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .grid-block .overlay {
+                background-color: transparent;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                z-index: 1;
+                border-radius: 20px; }
+              .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .grid-block .bg-layer {
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center 64px;
+                transition: transform 300ms ease-in-out;
+                transform-origin: center center;
+                height: 100%;
+                width: 100%;
+                border-radius: 20px; }
+                .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .grid-block .bg-layer.faq {
+                  background-image: url("images/question-block.png");
+                  background-position: center 72px; }
+              .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .grid-block.three-quarters {
+                height: 354px;
+                margin-bottom: 27px; }
+                .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .grid-block.three-quarters .grid-block-text {
+                  font-size: 1.7em;
+                  letter-spacing: 1px;
+                  font-weight: 400;
+                  top: 15px; }
+                  .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .grid-block.three-quarters .grid-block-text.bottom {
+                    top: auto;
+                    bottom: -5px;
+                    font-size: 1.05em;
+                    font-weight: 300;
+                    letter-spacing: 1px;
+                    line-height: 20px; }
+                    .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .grid-block.three-quarters .grid-block-text.bottom span {
+                      font-size: 1.05em; }
+              .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .grid-block.full {
+                height: 449px; }
+                .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .grid-block.full .grid-block-text.bottom {
+                  top: auto;
+                  bottom: -10px; }
+                .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .grid-block.full .bg-layer {
+                  background-position: center 200px; }
+              .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .grid-block .grid-block-text {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                margin-bottom: 30px;
+                font-weight: 300;
+                letter-spacing: 1px;
+                font-size: 1.3em;
+                z-index: 2;
+                padding: 0 5px;
+                transition: transform 300ms ease-in-out; }
+                .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .grid-block .grid-block-text.big {
+                  font-size: 2em;
+                  font-weight: 400;
+                  top: 15px; }
+                .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .grid-block .grid-block-text.small {
+                  font-size: 1.2em !important; }
+                .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .grid-block .grid-block-text.x-small {
+                  font-size: 1.1em !important; }
+              .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .grid-block img {
+                width: 100%; }
+              .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .grid-block:hover {
+                box-shadow: 0 0 0 4px #E60012; }
+                .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .grid-block:hover .overlay {
+                  background-color: rgba(0, 0, 0, 0.3); }
+                .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .grid-block:hover .grid-block-text {
+                  transform: scale3d(1.06, 1.06, 1) translateY(3em); }
+                  .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .grid-block:hover .grid-block-text.bottom {
+                    transform: scale3d(1.06, 1.06, 1) translateY(-2em); }
+                .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .grid-block:hover .bg-layer {
+                  -webkit-filter: blur(5px);
+                  filter: blur(5px);
+                  transform: scale3d(1.15, 1.15, 1); }
+            .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col:last-child {
+              margin-right: 0; }
+            .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .button {
+              background-color: #F7A324;
+              color: #fff;
+              border-radius: 20px;
+              font-size: 28px;
+              height: auto;
+              padding: 15px 5px;
+              position: relative; }
+              .header .nav .flex-wrap .dropdown .dropdown-grid .grid-col .button:hover {
+                box-shadow: 0 0 0 4px #f9be66; }
+        .header .nav .flex-wrap .dropdown.switch {
+          background-color: #fff;
+          background-image: linear-gradient(-180deg, #FFFFFF 25%, #DADADA 100%); }
+          .header .nav .flex-wrap .dropdown.switch .dropdown-grid .grid-col .grid-block .bg-layer.switch {
+            background-image: url("images/switch-redbg.jpg");
+            background-position: center 90px; }
+          .header .nav .flex-wrap .dropdown.switch .dropdown-grid .grid-col .grid-block .bg-layer.features {
+            background-image: url("images/features-redbg.jpg"); }
+          .header .nav .flex-wrap .dropdown.switch .dropdown-grid .grid-col .grid-block .bg-layer.family-fun {
+            background-image: url("images/familyfun-redbg.jpg"); }
+          .header .nav .flex-wrap .dropdown.switch .dropdown-grid .grid-col .grid-block .bg-layer.online-services {
+            background-image: url("images/onlineservice-redbg.jpg");
+            background-position: center 69px; }
+          .header .nav .flex-wrap .dropdown.switch .dropdown-grid .grid-col .grid-block .bg-layer.accessories {
+            background-image: url("images/accessories-redbg.jpg"); }
+          .header .nav .flex-wrap .dropdown.switch .dropdown-grid .grid-col .grid-block .bg-layer.switch-games {
+            background-image: url("images/switchgames-redbg.jpg"); }
+          .header .nav .flex-wrap .dropdown.switch .mario-jumping {
+            left: -65px;
+            top: 50px;
+            -webkit-animation: ani1 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+            /* Safari 4.0 - 8.0 */
+            animation: ani1 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; }
+@keyframes ani1 {
+  from {
+    top: 50px; }
+  to {
+    top: 100px; } }
+          .header .nav .flex-wrap .dropdown.switch .pipe {
+            left: -37px;
+            bottom: -125px; }
+          .header .nav .flex-wrap .dropdown.switch .mushroom {
+            right: 315px;
+            bottom: 58px; }
+          .header .nav .flex-wrap .dropdown.switch .star {
+            right: 190px;
+            bottom: 177px; }
+          .header .nav .flex-wrap .dropdown.switch .paratroopa {
+            right: -45px;
+            bottom: 220px;
+            -webkit-animation: ani2 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+            /* Safari 4.0 - 8.0 */
+            animation: ani2 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; }
+@keyframes ani2 {
+  from {
+    top: 20px; }
+  to {
+    top: 70px; } }
+          .header .nav .flex-wrap .dropdown.switch .brick {
+            right: 76px;
+            bottom: 0px; }
+          .header .nav .flex-wrap .dropdown.switch .question-block {
+            right: -38px;
+            bottom: 0px; }
+        .header .nav .flex-wrap .dropdown.threeds {
+          background-color: #CE181E; }
+          .header .nav .flex-wrap .dropdown.threeds .dropdown-grid .grid-col .grid-block {
+            background-color: #ff0008; }
+            .header .nav .flex-wrap .dropdown.threeds .dropdown-grid .grid-col .grid-block .bg-layer.threeds-family {
+              background-image: url("images/threedsfam-redbg.jpg");
+              background-position: center 100px; }
+            .header .nav .flex-wrap .dropdown.threeds .dropdown-grid .grid-col .grid-block .bg-layer.whatis-threeds {
+              background-image: url("images/what-is-nintendo-3ds-redbg.jpg");
+              background-position: center 74px; }
+            .header .nav .flex-wrap .dropdown.threeds .dropdown-grid .grid-col .grid-block .bg-layer.threeds-features {
+              background-image: url("images/3dsfeatures-redbg.jpg");
+              background-position: center 74px; }
+            .header .nav .flex-wrap .dropdown.threeds .dropdown-grid .grid-col .grid-block .bg-layer.whatis-twods {
+              background-image: url("images/what-is-nintendo-2ds-redbg.jpg");
+              background-position: center 93px; }
+            .header .nav .flex-wrap .dropdown.threeds .dropdown-grid .grid-col .grid-block .bg-layer.builtin-software {
+              background-image: url("images/built-in-software@-redbg.jpg");
+              background-position: center 72px; }
+            .header .nav .flex-wrap .dropdown.threeds .dropdown-grid .grid-col .grid-block .bg-layer.threeds-games {
+              background-image: url("images/3ds-games-redbg.jpg");
+              background-position: center 90px; }
+          .header .nav .flex-wrap .dropdown.threeds .peach {
+            left: -140px;
+            top: 50px;
+            -webkit-animation: ani3 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+            /* Safari 4.0 - 8.0 */
+            animation: ani3 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; }
+@keyframes ani3 {
+  from {
+    left: -200px; }
+  to {
+    left: -150px; } }
+          .header .nav .flex-wrap .dropdown.threeds .luigi {
+            right: -65px;
+            top: 50px;
+            -webkit-animation: ani4 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+            /* Safari 4.0 - 8.0 */
+            animation: ani4 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; }
+@keyframes ani4 {
+  from {
+    top: 20px; }
+  to {
+    top: 80px; } }
+          .header .nav .flex-wrap .dropdown.threeds .pipe2 {
+            right: -15px;
+            bottom: -145px; }
+        .header .nav .flex-wrap .dropdown.wiiu {
+          background-color: #0196D1; }
+          .header .nav .flex-wrap .dropdown.wiiu .dropdown-grid .grid-col .grid-block {
+            background-color: #3cb1d9; }
+            .header .nav .flex-wrap .dropdown.wiiu .dropdown-grid .grid-col .grid-block:hover {
+              box-shadow: 0 0 0 4px #3cb1d9; }
+            .header .nav .flex-wrap .dropdown.wiiu .dropdown-grid .grid-col .grid-block .bg-layer.wiiu-full {
+              background-image: url("images/wiiu-bluebg.jpg"); }
+            .header .nav .flex-wrap .dropdown.wiiu .dropdown-grid .grid-col .grid-block .bg-layer.what-is-wiiu {
+              background-image: url("images/what-is-wiiu-bluebg.jpg");
+              background-position: center 74px; }
+            .header .nav .flex-wrap .dropdown.wiiu .dropdown-grid .grid-col .grid-block .bg-layer.wiiu-builtinsoftware {
+              background-image: url("images/built-in-software-bluebg.jpg");
+              background-position: center 80px; }
+            .header .nav .flex-wrap .dropdown.wiiu .dropdown-grid .grid-col .grid-block .bg-layer.wiiu-features {
+              background-image: url("images/wiiu-features-bluebg.jpg");
+              background-position: center 76px; }
+            .header .nav .flex-wrap .dropdown.wiiu .dropdown-grid .grid-col .grid-block .bg-layer.wiiu-accessories {
+              background-image: url("images/accessories-bluebg.jpg");
+              background-position: center 76px; }
+            .header .nav .flex-wrap .dropdown.wiiu .dropdown-grid .grid-col .grid-block .bg-layer.wiiu-games {
+              background-image: url("images/games-bluebg.jpg");
+              background-position: center 72px; }
+          .header .nav .flex-wrap .dropdown.wiiu .mario-running {
+            left: -80px;
+            bottom: 50px;
+            -webkit-animation: fojacked 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+            /* Safari 4.0 - 8.0 */
+            animation: fojacked 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; }
+@keyframes fojacked {
+  from {
+    left: -130px; }
+  to {
+    left: -90px; } }
+          .header .nav .flex-wrap .dropdown.wiiu .question-block2 {
+            right: 0px;
+            bottom: 230px; }
+          .header .nav .flex-wrap .dropdown.wiiu .mushroom {
+            right: -55px;
+            bottom: 50px; }
+          .header .nav .flex-wrap .dropdown.wiiu .goomba-close-mouth {
+            right: 80px;
+            bottom: 40px;
+            transform: rotate(0deg);
+            -webkit-animation: fojacked2 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+            /* Safari 4.0 - 8.0 */
+            animation: fojacked2 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; }
+@keyframes fojacked2 {
+  from {
+    transform: rotate(10deg); }
+  to {
+    transform: rotate(-19deg); } }
+        .header .nav .flex-wrap .dropdown.gamestore {
+          background-color: #FF7D00; }
+          .header .nav .flex-wrap .dropdown.gamestore .dropdown-grid .grid-col .grid-block {
+            background-color: #F7A324; }
+            .header .nav .flex-wrap .dropdown.gamestore .dropdown-grid .grid-col .grid-block:hover {
+              box-shadow: 0 0 0 4px #F7A324; }
+            .header .nav .flex-wrap .dropdown.gamestore .dropdown-grid .grid-col .grid-block .bg-layer.game-store {
+              background-image: url("images/game-store-games.jpg");
+              background-position: center 80px; }
+            .header .nav .flex-wrap .dropdown.gamestore .dropdown-grid .grid-col .grid-block .bg-layer.switch-games {
+              background-image: url("images/switch-games-orangebg.jpg"); }
+            .header .nav .flex-wrap .dropdown.gamestore .dropdown-grid .grid-col .grid-block .bg-layer.mobile-games {
+              background-image: url("images/mobile-games-orangebg.jpg");
+              background-position: center 50px; }
+            .header .nav .flex-wrap .dropdown.gamestore .dropdown-grid .grid-col .grid-block .bg-layer.threeds-games {
+              background-image: url("images/3ds-games-orangebg.jpg");
+              background-position: center 80px; }
+            .header .nav .flex-wrap .dropdown.gamestore .dropdown-grid .grid-col .grid-block .bg-layer.sales-deals {
+              background-image: url("images/salesdeals-orangebg.jpg");
+              background-position: center 60px; }
+            .header .nav .flex-wrap .dropdown.gamestore .dropdown-grid .grid-col .grid-block .bg-layer.wiiu-games {
+              background-image: url("images/wiiu-games-orangebg.jpg"); }
+            .header .nav .flex-wrap .dropdown.gamestore .dropdown-grid .grid-col .grid-block .bg-layer.coming-soon {
+              background-image: url("images/star-orangebg.jpg"); }
+          .header .nav .flex-wrap .dropdown.gamestore .brick {
+            top: 120px;
+            left: 20px; }
+          .header .nav .flex-wrap .dropdown.gamestore .bobomb {
+            bottom: 40px;
+            left: -20px;
+            -webkit-animation: blahse 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+            /* Safari 4.0 - 8.0 */
+            animation: blahse 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; }
+@keyframes blahse {
+  from {
+    left: -50px; }
+  to {
+    left: -20px; } }
+          .header .nav .flex-wrap .dropdown.gamestore .bowser {
+            bottom: 40px;
+            left: calc(100% - 225px);
+            -webkit-animation: grow 2s infinite alternate;
+            /* Safari 4.0 - 8.0 */
+            animation: grow 2s infinite alternate; }
+@keyframes grow {
+  from {
+    transform: scale(1); }
+  to {
+    transform: scale(1.1); } }
+        .header .nav .flex-wrap .dropdown.amiibo {
+          background: #fff url(images/bg-amiibo.png); }
+          .header .nav .flex-wrap .dropdown.amiibo .dropdown-grid .grid-col .grid-block .bg-layer.mario-amiibo {
+            background-image: url("images/mario-amiibo-bluebg.jpg");
+            background-position: center 84px; }
+          .header .nav .flex-wrap .dropdown.amiibo .dropdown-grid .grid-col .grid-block .bg-layer.what-is {
+            background-image: url("images/what-is-amiibo-redbg.jpg"); }
+          .header .nav .flex-wrap .dropdown.amiibo .dropdown-grid .grid-col .grid-block .bg-layer.compatability {
+            background-image: url("images/compatibility-greenbg.jpg"); }
+          .header .nav .flex-wrap .dropdown.amiibo .dropdown-grid .grid-col .grid-block .bg-layer.lineup {
+            background-image: url("images/lineup-bluebg.jpg");
+            background-position: center 80px; }
+          .header .nav .flex-wrap .dropdown.amiibo .dropdown-grid .grid-col .grid-block .bg-layer.games {
+            background-image: url("images/games-lgreenbg.jpg"); }
+          .header .nav .flex-wrap .dropdown.amiibo .dropdown-grid .grid-col .grid-block.blue {
+            background-color: #25adf3; }
+            .header .nav .flex-wrap .dropdown.amiibo .dropdown-grid .grid-col .grid-block.blue:hover {
+              box-shadow: 0 0 0 4px #25adf3; }
+          .header .nav .flex-wrap .dropdown.amiibo .dropdown-grid .grid-col .grid-block.green {
+            background-color: #009682; }
+            .header .nav .flex-wrap .dropdown.amiibo .dropdown-grid .grid-col .grid-block.green:hover {
+              box-shadow: 0 0 0 4px #009682; }
+          .header .nav .flex-wrap .dropdown.amiibo .dropdown-grid .grid-col .grid-block.purple {
+            background-color: #e62d8c; }
+            .header .nav .flex-wrap .dropdown.amiibo .dropdown-grid .grid-col .grid-block.purple:hover {
+              box-shadow: 0 0 0 4px #e62d8c; }
+          .header .nav .flex-wrap .dropdown.amiibo .dropdown-grid .grid-col .grid-block.lightgreen {
+            background-color: #a5c80f; }
+            .header .nav .flex-wrap .dropdown.amiibo .dropdown-grid .grid-col .grid-block.lightgreen:hover {
+              box-shadow: 0 0 0 4px #a5c80f; }
+        .header .nav .flex-wrap .dropdown.play-nintendo {
+          background-color: #FF3F3F; }
+          .header .nav .flex-wrap .dropdown.play-nintendo .dropdown-grid .grid-col .grid-block {
+            background-color: #fa6a6a; }
+            .header .nav .flex-wrap .dropdown.play-nintendo .dropdown-grid .grid-col .grid-block:hover {
+              box-shadow: 0 0 0 4px #fa6a6a; }
+            .header .nav .flex-wrap .dropdown.play-nintendo .dropdown-grid .grid-col .grid-block .bg-layer.play-nintendo {
+              background-image: url("images/play-nintendo-pinkbg.jpg");
+              background-position: center 90px; }
+            .header .nav .flex-wrap .dropdown.play-nintendo .dropdown-grid .grid-col .grid-block .bg-layer.friends {
+              background-image: url("images/donkey-kong-diddy-kong-pinkbg.jpg"); }
+            .header .nav .flex-wrap .dropdown.play-nintendo .dropdown-grid .grid-col .grid-block .bg-layer.parents {
+              background-image: url("images/baby-mario-and-yoshi-pinkbg.jpg"); }
+            .header .nav .flex-wrap .dropdown.play-nintendo .dropdown-grid .grid-col .grid-block .bg-layer.explore {
+              background-image: url("images/lakitu-pinkbg.jpg");
+              background-position: center 57px; }
+            .header .nav .flex-wrap .dropdown.play-nintendo .dropdown-grid .grid-col .grid-block .bg-layer.news-tips {
+              background-image: url("images/peach-pinkbg.jpg");
+              background-position: center 57px; }
+          .header .nav .flex-wrap .dropdown.play-nintendo .lakitu {
+            left: -10px;
+            top: 50px;
+            -webkit-animation: ani4 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+            /* Safari 4.0 - 8.0 */
+            animation: ani4 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; }
+@keyframes ani4 {
+  from {
+    top: 50px; }
+  to {
+    top: 100px; } }
+          .header .nav .flex-wrap .dropdown.play-nintendo .spiny {
+            left: -10px;
+            bottom: 15px;
+            -webkit-animation: hotsoup 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+            /* Safari 4.0 - 8.0 */
+            animation: hotsoup 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; }
+@keyframes hotsoup {
+  from {
+    left: -10px; }
+  to {
+    left: -50px; } }
+          .header .nav .flex-wrap .dropdown.play-nintendo .bobomb {
+            right: 450px;
+            bottom: 15px;
+            -webkit-animation: swizzlefest 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+            /* Safari 4.0 - 8.0 */
+            animation: swizzlefest 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; }
+@keyframes swizzlefest {
+  from {
+    right: 450px; }
+  to {
+    right: 390px; } }
+          .header .nav .flex-wrap .dropdown.play-nintendo .goomba {
+            right: 230px;
+            bottom: 15px;
+            -webkit-animation: banana 3s ease-in-out infinite alternate;
+            /* Safari 4.0 - 8.0 */
+            animation: banana 3s ease-in-out infinite alternate; }
+@keyframes banana {
+  from {
+    right: 230px; }
+  to {
+    right: 250px; } }
+          .header .nav .flex-wrap .dropdown.play-nintendo .mario-yoshi {
+            right: -230px;
+            bottom: 15px;
+            -webkit-animation: yay 3s linear infinite alternate;
+            /* Safari 4.0 - 8.0 */
+            animation: yay 3s linear infinite alternate; }
+@keyframes yay {
+  from {
+    right: -230px; }
+  to {
+    right: -190px; } }
+        .header .nav .flex-wrap .dropdown.support {
+          background-color: #00BFF3; }
+          .header .nav .flex-wrap .dropdown.support .dropdown-grid .grid-col .grid-block {
+            background-color: #55d4f7; }
+            .header .nav .flex-wrap .dropdown.support .dropdown-grid .grid-col .grid-block:hover {
+              box-shadow: 0 0 0 4px #55d4f7; }
+            .header .nav .flex-wrap .dropdown.support .dropdown-grid .grid-col .grid-block .bg-layer.support {
+              background-image: url("images/mario-bluebg.jpg");
+              background-position: center 90px; }
+            .header .nav .flex-wrap .dropdown.support .dropdown-grid .grid-col .grid-block .bg-layer.icon {
+              background-size: 95px;
+              background-position: center 70px; }
+            .header .nav .flex-wrap .dropdown.support .dropdown-grid .grid-col .grid-block .bg-layer.switch {
+              background-image: url("images/icon-joy-con.svg"); }
+            .header .nav .flex-wrap .dropdown.support .dropdown-grid .grid-col .grid-block .bg-layer.digital-purchases {
+              background-image: url("images/digital-purchases.svg");
+              background-size: 115px;
+              background-position: center 82px; }
+            .header .nav .flex-wrap .dropdown.support .dropdown-grid .grid-col .grid-block .bg-layer.threeds-support {
+              background-image: url("images/threeds-support.svg");
+              background-size: 165px;
+              background-position: center 82px; }
+            .header .nav .flex-wrap .dropdown.support .dropdown-grid .grid-col .grid-block .bg-layer.internet-connections {
+              background-image: url("images/internet-connections.svg");
+              background-position: center 60px; }
+            .header .nav .flex-wrap .dropdown.support .dropdown-grid .grid-col .grid-block .bg-layer.support-forums {
+              background-image: url("images/support-forums.svg");
+              background-position: center 80px; }
+            .header .nav .flex-wrap .dropdown.support .dropdown-grid .grid-col .grid-block .bg-layer.set-up-repair {
+              background-image: url("images/set-up-repair.svg");
+              background-position: center 80px; }
+          .header .nav .flex-wrap .dropdown.support .question-block {
+            left: 15px;
+            top: 150px; }
+          .header .nav .flex-wrap .dropdown.support .goomba-open-mouth {
+            left: 70px;
+            bottom: 90px;
+            -webkit-animation: fojacked2 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+            /* Safari 4.0 - 8.0 */
+            animation: fojacked2 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; }
+@keyframes fojacked2 {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(-19deg); } }
+          .header .nav .flex-wrap .dropdown.support .goomba-close-mouth {
+            left: -40px;
+            bottom: 0px;
+            -webkit-animation: fojacked3 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+            /* Safari 4.0 - 8.0 */
+            animation: fojacked3 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; }
+@keyframes fojacked3 {
+  from {
+    transform: rotate(-30deg); }
+  to {
+    transform: rotate(19deg); } }
+          .header .nav .flex-wrap .dropdown.support .toads {
+            right: 50px;
+            bottom: 100px;
+            -webkit-animation: ani5 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+            /* Safari 4.0 - 8.0 */
+            animation: ani5 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; }
+@keyframes ani5 {
+  from {
+    right: 50px; }
+  to {
+    right: 40px; } }
+          .header .nav .flex-wrap .dropdown.support .toads-jumping {
+            right: -90px;
+            bottom: 115px;
+            -webkit-animation: ani6 3s ease-in-out infinite alternate;
+            /* Safari 4.0 - 8.0 */
+            animation: ani6 3s ease-in-out infinite alternate; }
+@keyframes ani6 {
+  from {
+    transform: rotate(-10deg); }
+  to {
+    transform: rotate(0deg); } }
+        .header .nav .flex-wrap .dropdown.my-nintendo {
+          background-color: #fff;
+          background-image: radial-gradient(#efefef 25%, transparent 26%), radial-gradient(#efefef 25%, transparent 26%);
+          background-size: 20px 20px;
+          background-position: 0 0, 10px 10px; }
+          .header .nav .flex-wrap .dropdown.my-nintendo .dropdown-grid .grid-col .grid-block {
+            background-color: #E60012; }
+            .header .nav .flex-wrap .dropdown.my-nintendo .dropdown-grid .grid-col .grid-block:hover {
+              box-shadow: 0 0 0 4px #e60012; }
+            .header .nav .flex-wrap .dropdown.my-nintendo .dropdown-grid .grid-col .grid-block .bg-layer.my-nintendo {
+              background-image: url("images/my-nintendo-mii-redbg.jpg");
+              background-position: center 90px; }
+            .header .nav .flex-wrap .dropdown.my-nintendo .dropdown-grid .grid-col .grid-block .bg-layer.what-is {
+              background-image: url("images/my-nintendo.svg");
+              background-size: 125px; }
+            .header .nav .flex-wrap .dropdown.my-nintendo .dropdown-grid .grid-col .grid-block .bg-layer.about-points {
+              background-image: url("images/about-points-redbg.jpg");
+              background-position: center 75px; }
+            .header .nav .flex-wrap .dropdown.my-nintendo .dropdown-grid .grid-col .grid-block .bg-layer.redeem {
+              background-image: url("images/rewards.svg");
+              background-size: 130px;
+              background-position: center 42px; }
+            .header .nav .flex-wrap .dropdown.my-nintendo .dropdown-grid .grid-col .grid-block .bg-layer.earn-points {
+              background-image: url("images/earn-points.svg");
+              background-position: center 60px;
+              background-size: 115px; }
+          .header .nav .flex-wrap .dropdown.my-nintendo .question-block {
+            left: 15px;
+            top: 150px; }
+          .header .nav .flex-wrap .dropdown.my-nintendo .goomba-open-mouth {
+            left: 70px;
+            bottom: 90px;
+            -webkit-animation: fojacked2 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+            /* Safari 4.0 - 8.0 */
+            animation: fojacked2 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; }
+@keyframes fojacked2 {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(-19deg); } }
+          .header .nav .flex-wrap .dropdown.my-nintendo .goomba-close-mouth {
+            left: -40px;
+            bottom: 0px;
+            -webkit-animation: fojacked3 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+            /* Safari 4.0 - 8.0 */
+            animation: fojacked3 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; }
+@keyframes fojacked3 {
+  from {
+    transform: rotate(-30deg); }
+  to {
+    transform: rotate(19deg); } }
+          .header .nav .flex-wrap .dropdown.my-nintendo .toads {
+            right: 50px;
+            bottom: 100px;
+            -webkit-animation: ani5 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+            /* Safari 4.0 - 8.0 */
+            animation: ani5 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; }
+@keyframes ani5 {
+  from {
+    right: 50px; }
+  to {
+    right: 40px; } }
+          .header .nav .flex-wrap .dropdown.my-nintendo .toads-jumping {
+            right: -90px;
+            bottom: 115px;
+            -webkit-animation: ani6 3s ease-in-out infinite alternate;
+            /* Safari 4.0 - 8.0 */
+            animation: ani6 3s ease-in-out infinite alternate; }
+@keyframes ani6 {
+  from {
+    transform: rotate(-10deg); }
+  to {
+    transform: rotate(0deg); } }
+  .header.headerSticky {
+    transform: translateY(-86px); }
+
+/*
+  Bootstrap Carousel Fade Transition (for Bootstrap 3.3.x)
+  CSS from:       http://codepen.io/transportedman/pen/NPWRGq
+  and:            http://stackoverflow.com/questions/18548731/bootstrap-3-carousel-fading-to-new-slide-instead-of-sliding-to-new-slide
+  Inspired from:  http://codepen.io/Rowno/pen/Afykb 
+*/
+.carousel-control {
+  background-image: none !important;
+  opacity: 1 !important;
+  bottom: 78px; }
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {
+  font-size: 36px;
+  font-weight: 100;
+  background-color: rgba(0, 0, 0, 0.27);
+  border: 5px solid rgba(255, 255, 255, 0.27);
+  border-radius: 50%;
+  display: block;
+  padding: 12px 12px;
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2576bc;
+  opacity: 0;
+  transition: opacity 0.5s; }
+  .carousel-control .glyphicon-chevron-left:hover, .carousel-control .glyphicon-chevron-right:hover, .carousel-control .icon-next:hover, .carousel-control .icon-prev:hover {
+    color: #3aa4ff; }
+
+#myCarousel:hover .carousel-control .glyphicon-chevron-left, #myCarousel:hover .carousel-control .glyphicon-chevron-right, #myCarousel:hover .carousel-control .icon-next, #myCarousel:hover .carousel-control .icon-prev {
+  opacity: 1 !important; }
+
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  transition-property: opacity; }
+  .carousel-fade .carousel-inner .item p {
+    color: #ccc;
+    position: absolute;
+    z-index: 1;
+    bottom: 14px;
+    right: 20px;
+    letter-spacing: 1px;
+    font-family: 'montserrat-light';
+    font-style: italic;
+    font-size: .7em; }
+  .carousel-fade .carousel-inner .item.zelda {
+    background-color: #324b6a; }
+  .carousel-fade .carousel-inner .item.mario {
+    background-color: #facd00; }
+  .carousel-fade .carousel-inner .item.splatoon, .carousel-fade .carousel-inner .item.pokemon {
+    background-color: #000; }
+  .carousel-fade .carousel-inner .item .overlay-bar {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 8px 15px; }
+    .carousel-fade .carousel-inner .item .overlay-bar .bar-container {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between; }
+      .carousel-fade .carousel-inner .item .overlay-bar .bar-container .esrb-rating {
+        width: 180px; }
+        .carousel-fade .carousel-inner .item .overlay-bar .bar-container .esrb-rating img {
+          width: 100%; }
+      .carousel-fade .carousel-inner .item .overlay-bar .bar-container h1 {
+        color: #fff;
+        font-weight: 300;
+        font-size: 2em;
+        letter-spacing: 1px;
+        margin-top: 25px;
+        margin-right: 10px; }
+      .carousel-fade .carousel-inner .item .overlay-bar .bar-container .button {
+        background-color: #2576bc;
+        color: #fff;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        margin-top: 17px;
+        font-size: 20px;
+        letter-spacing: 1px;
+        transition: .3s; }
+        .carousel-fade .carousel-inner .item .overlay-bar .bar-container .button:hover {
+          background-color: #3aa4ff; }
+
+.carousel-fade .carousel-inner .active {
+  opacity: 1; }
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1; }
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1; }
+
+.carousel-fade .carousel-control {
+  z-index: 2; }
+
+/*
+  WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
+  Need to override the 3.3 new styles for modern browsers & apply opacity
+*/
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .carousel-fade .carousel-inner > .item.next,
+  .carousel-fade .carousel-inner > .item.active.right {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+
+  .carousel-fade .carousel-inner > .item.prev,
+  .carousel-fade .carousel-inner > .item.active.left {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+
+  .carousel-fade .carousel-inner > .item.next.left,
+  .carousel-fade .carousel-inner > .item.prev.right,
+  .carousel-fade .carousel-inner > .item.active {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+.content {
+  position: relative;
+  top: 68px;
+  z-index: 1;
+  background-color: #fff; }
+  .content .carousel {
+    text-align: center;
+    margin-bottom: 50px; }
+    .content .carousel .carousel-inner {
+      text-align: center; }
+      .content .carousel .carousel-inner .item {
+        text-align: center; }
+        .content .carousel .carousel-inner .item img {
+          display: inline; }
+  .content .small-carousel-wrap {
+    max-width: 980px;
+    margin: 0 auto 200px;
+    position: relative; }
+    .content .small-carousel-wrap .small-carousel {
+      overflow-x: hidden;
+      white-space: nowrap;
+      padding: 0 20px; }
+      .content .small-carousel-wrap .small-carousel .small-carousel-item {
+        margin: 0 30px 0 0;
+        display: inline-block;
+        height: 100%;
+        border: 1px solid transparent;
+        position: relative;
+        right: 0;
+        transition: .5s; }
+        .content .small-carousel-wrap .small-carousel .small-carousel-item:hover {
+          border-color: red; }
+        .content .small-carousel-wrap .small-carousel .small-carousel-item.shift {
+          right: 982px; }
+    .content .small-carousel-wrap .arrow-control {
+      position: absolute;
+      top: 60px;
+      background: linear-gradient(#eee, #fdfdfd);
+      border: 1px solid #ccc;
+      display: block;
+      z-index: 1;
+      width: 40px;
+      height: 40px;
+      font-weight: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      cursor: pointer;
+      color: steelblue; }
+      .content .small-carousel-wrap .arrow-control.left {
+        left: -10px; }
+        .content .small-carousel-wrap .arrow-control.left .fa {
+          padding-right: 4px; }
+      .content .small-carousel-wrap .arrow-control.right {
+        right: -10px; }
+        .content .small-carousel-wrap .arrow-control.right .fa {
+          padding-left: 4px; }
+      .content .small-carousel-wrap .arrow-control .fa {
+        font-weight: 100;
+        font-size: 25px; }
+      .content .small-carousel-wrap .arrow-control:hover {
+        color: #25adf3; }
+    .content .small-carousel-wrap .indicators-wrap {
+      height: 100px;
+      width: 185px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .content .small-carousel-wrap .indicators-wrap .scarousel-indicator {
+        background-color: #ddd;
+        height: 4px;
+        width: 35px;
+        border-radius: 3px;
+        cursor: pointer; }
+        .content .small-carousel-wrap .indicators-wrap .scarousel-indicator.active {
+          background-color: #1660a0 !important; }
+        .content .small-carousel-wrap .indicators-wrap .scarousel-indicator:hover {
+          background-color: #3aa4ff; }
+
+.filler {
+  padding: 20px; }
+
+@media screen and (max-width: 900px) {
+  .header .header-content ul.search-region-login li input {
+    border: none;
+    text-align: right; } }
+
+/*# sourceMappingURL=styles.css.map */

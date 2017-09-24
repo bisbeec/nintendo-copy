@@ -1,0 +1,1231 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+@font-face {
+  font-family: 'avenir';
+  src: url('fonts/Avenir.otf');
+}
+
+$wrap-width: 1286px;
+
+$nintendoRed: #E60012;
+$orange1: #F7A324;
+$hover-blue: #00d2be;
+
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none !important;
+}
+
+body {
+	background: #777;
+}
+
+.wrap {
+	max-width: $wrap-width;
+	margin: 0 auto;
+}
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 2;
+	height: 72px;
+	background-color: #fff;
+	transition: transform 0.8s cubic-bezier(0.6, 0, 0.4, 1);
+	will-change: transform;
+	.header-content {
+		max-width: $wrap-width;
+		margin: 0 auto;
+		.logo {
+			background-color: $nintendoRed;
+			float: left;
+			padding: 55px 30px 25px;
+			border-radius: 0 0 15px 15px;
+			box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
+			position: absolute;
+			z-index: 100;
+			transform: translateY(-26px);
+    		transition: transform 500ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    		will-change: transform;
+			&:hover {
+			    transform: translateY(-10px);
+    			transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+			}
+		}
+
+		ul {
+			li {
+				float: left;
+			}
+			&.search-region-login {
+				text-align: right;
+				margin-top: 5px;
+				margin-bottom: 3px;
+				padding-right: 15px;
+				float: right;
+				li {
+					float: none;
+					display: inline-block;
+					color: #999;
+					margin: 0 0 0 20px;
+					input {
+						-webkit-appearance: none;
+						outline: none;
+						border-radius: 20px;
+						width: 370px;
+						height: 34px;
+						box-shadow: none;
+						border: none;
+						border: 1px solid #ccc;
+						padding: 0 55px 0 10px;
+					}
+					.fa-search {
+						position: relative;
+						right: 45px;
+						color: #999;
+						font-size: 24px;
+						top: 3px;
+						cursor: pointer;
+						&:hover {
+							color: $hover-blue;
+						}
+					}
+					.fa-user {
+						font-size: 18px;
+						margin-right: 5px;
+						position: relative;
+						top: 2px;
+					}
+					.us-flag {
+						width: 32px;
+						margin-left: 10px;
+						position: relative;
+						bottom: 2px;
+					}
+					a {
+						font-size: 13px;
+						color: #999;
+						&:hover {
+							color: $hover-blue;
+						}
+					}
+					&:nth-child(2) {
+						margin-left: 0px;
+					}
+				}
+			}
+		}
+	}
+	.nav {
+		background:linear-gradient(#f5f5f5, #dadada);
+		clear: both;
+		height: 30px;
+		.flex-wrap {
+			display: flex;
+			max-width: $wrap-width;
+			margin: 0 auto;
+			justify-content: space-around;
+			padding-left: 180px;
+			height: 100%;
+			li {
+				display: block;
+				height: 100%;
+				width: 15%;
+				text-align: center;
+				transition: color 0.3s, background 0.3s;
+				&.switch {
+					width: 17%;
+					&:hover {
+						background-color: #fff;
+						a {
+							color: #333;
+						}
+					}
+				}
+				&.threeds {
+					&:hover {
+						background-color: #CE181E;
+					}
+				}
+				&.wiiu {
+					width: 8%;
+					&:hover {
+						background-color: #0096C8;
+					}
+				}
+				&.gamestore {
+					width: 13%;
+					&:hover {
+						background-color: #FF7D00;
+					}
+				}
+				&.amiibo {
+					width: 9%;
+					&:hover {
+						background-color: #fff;
+						a {
+							color: #333;
+						}
+					}
+				} 
+				&.support {
+					width: 9%;
+				}
+				&.playnintendo {
+					&:hover {
+						background-color: #FF3F3F;
+					}
+				}
+				&.support {
+					&:hover {
+						background-color: #00BFF3;
+					}
+				}
+				&.mynintendo {
+					width: 14%;
+					&:hover {
+						background-color: #fff;
+						a {
+							color: #333;
+						}
+					}
+				}
+
+
+				a {
+					color: #999;
+					display: block;
+					padding-top: 5px;
+					height: 100%;
+					transition: color 0.3s;
+				}
+				&:hover {
+					a {
+						color: #fff;
+					}
+				}
+				&.w-dropdown {
+					&:hover {
+						.dropdown {
+							display: block;
+						}
+					}
+				}
+			}
+			.dropdown {
+				position: absolute;
+				width: 100%;
+				left: 0;
+				animation: fade-in .3s;
+				display: none;
+				overflow: hidden;
+				padding: 0 20px;
+				transition-delay: .3s;
+				img.dropdown-art {
+					position: absolute;
+					animation-delay: 1s;
+				}
+				.dropdown-grid {
+					max-width: 960px;
+					margin: 0 auto;
+					display: flex;
+					justify-content: space-between;
+					padding: 38px 0 19px;
+					.grid-col {
+						width: 220px;
+						margin-right: 15px;
+						.grid-block {
+							width: 100%;
+							color: #fff;
+							border-radius: 20px;
+							background-color: $nintendoRed;
+							height: 215px;
+							margin-bottom: 20px;
+							position: relative;
+							overflow: hidden !important;
+
+							.overlay {
+								background-color: transparent;
+								position: absolute;
+								width: 100%;
+								height: 100%;
+								top: 0;
+								z-index: 1;
+								border-radius: 20px;
+							}
+							
+    						.bg-layer {
+    							background-size: contain;
+								background-repeat: no-repeat;
+								background-position: center 64px;
+								transition: transform 300ms ease-in-out;
+	    						transform-origin: center center;
+	    						height: 100%;
+	    						width: 100%;
+	    						border-radius: 20px;
+	    						&.faq {
+									background-image: url('images/question-block.png');		
+									background-position: center 72px;
+								}
+    						}
+							&.three-quarters {
+								height: 354px;
+								margin-bottom: 27px;
+								.grid-block-text {
+									font-size: 1.7em;
+									letter-spacing: 1px;
+									font-weight: 400;
+									top: 15px;
+									&.bottom {
+										top: auto;
+										bottom: -5px;
+										font-size: 1.05em;
+										font-weight: 300;
+										letter-spacing: 1px;
+										line-height: 20px;
+										span {
+											font-size: 1.05em;
+										}
+									}
+								}
+							}
+							&.full {
+								height: 449px;
+								.grid-block-text {
+									&.bottom {
+										top: auto;
+										bottom: -10px;
+									}
+								}
+								.bg-layer {
+									background-position: center 200px;
+								}
+
+							}
+							.grid-block-text {
+								position: absolute;
+								top: 0;
+								width: 100%;
+								margin-bottom: 30px;
+								font-weight: 300;
+								letter-spacing: 1px;
+								font-size: 1.3em;
+								z-index: 2;
+								padding: 0 5px;
+								transition: transform 300ms ease-in-out;
+								&.big {
+									font-size: 2em;
+									font-weight: 400;
+									top: 15px;
+								}
+								&.small {
+									font-size: 1.2em !important;
+								}
+								&.x-small {
+									font-size: 1.1em !important;
+								}
+							}
+							img {
+								width: 100%;
+							}
+							&:hover {
+								box-shadow: 0 0 0 4px #E60012;
+								.overlay {
+									background-color: rgba(0,0,0,.3);
+								}
+								.grid-block-text {
+									transform: scale3d(1.06, 1.06, 1) translateY(3em);
+									&.bottom {
+										transform: scale3d(1.06, 1.06, 1) translateY(-2em);
+									}
+								}
+								.bg-layer {
+									-webkit-filter: blur(5px);
+	    							filter: blur(5px);
+	    							transform: scale3d(1.15, 1.15, 1);
+								}
+							}
+						}
+						&:last-child {
+							margin-right: 0;
+						}
+						.button {
+							background-color: $orange1;
+							color: #fff;
+							border-radius: 20px;
+							font-size: 28px;
+							height: auto;
+							padding: 15px 5px;
+							position: relative;
+							&:hover {
+								box-shadow: 0 0 0 4px #f9be66;
+							}
+						}
+					}
+				}
+				&.switch {
+					background-color: #fff;
+					background-image: linear-gradient(-180deg, #FFFFFF 25%, #DADADA 100%);
+					.dropdown-grid {
+						.grid-col {
+							.grid-block {
+								.bg-layer {
+									&.switch {
+		    							background-image: url('images/switch-redbg.jpg');
+		    							background-position: center 90px;
+		    						}
+		    						&.features {
+										background-image: url('images/features-redbg.jpg');	
+									}
+									&.family-fun {
+										background-image: url('images/familyfun-redbg.jpg');	
+									}
+									&.online-services {
+										background-image: url('images/onlineservice-redbg.jpg');
+										background-position: center 69px;	
+									}
+									&.accessories {
+										background-image: url('images/accessories-redbg.jpg');	
+									}
+									&.switch-games {
+										background-image: url('images/switchgames-redbg.jpg');	
+									}
+								}
+							}
+						}
+					}
+					.mario-jumping {
+						left: -65px;
+						top: 50px;
+						-webkit-animation: ani1 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; /* Safari 4.0 - 8.0 */
+	    				animation: ani1 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+						@keyframes ani1 {
+							from { top: 50px; }
+	    					to { top: 100px; }
+						}
+					}
+					.pipe {
+						left: -37px;
+						bottom: -125px;
+					}
+					.mushroom {
+						right: 315px;
+						bottom: 58px;
+					}
+					.star {
+						right: 190px;
+						bottom: 177px;
+					}
+					.paratroopa {
+						right: -45px;
+						bottom: 220px;
+						-webkit-animation: ani2 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; /* Safari 4.0 - 8.0 */
+	    				animation: ani2 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+						@keyframes ani2 {
+							from { top: 20px; }
+	    					to { top: 70px; }
+						}
+					}
+					.brick {
+						right: 76px;
+						bottom: 0px;
+					}
+					.question-block {
+						right: -38px;
+						bottom: 0px;
+					}
+				}
+				&.threeds {
+					background-color: #CE181E;
+					.dropdown-grid {
+						.grid-col {
+							.grid-block {
+								background-color: #ff0008;
+								.bg-layer {
+									&.threeds-family {
+										background-image: url('images/threedsfam-redbg.jpg');		
+										background-position: center 100px;
+									}
+									&.whatis-threeds {
+										background-image: url('images/what-is-nintendo-3ds-redbg.jpg');		
+										background-position: center 74px;
+									}
+									&.threeds-features {
+										background-image: url('images/3dsfeatures-redbg.jpg');		
+										background-position: center 74px;
+									}
+									&.whatis-twods {
+										background-image: url('images/what-is-nintendo-2ds-redbg.jpg');		
+										background-position: center 93px;
+									}
+									&.builtin-software {
+										background-image: url('images/built-in-software@-redbg.jpg');		
+										background-position: center 72px;
+									}
+									&.threeds-games {
+										background-image: url('images/3ds-games-redbg.jpg');		
+										background-position: center 90px;
+									}
+								}
+							}
+						}
+					}
+					.peach {
+						left: -140px;
+						top: 50px;
+						-webkit-animation: ani3 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; /* Safari 4.0 - 8.0 */
+	    				animation: ani3 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+						@keyframes ani3 {
+							from { left: -200px; }
+	    					to { left: -150px; }
+						}
+					}
+					.luigi {
+						right: -65px;
+						top: 50px;
+						-webkit-animation: ani4 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; /* Safari 4.0 - 8.0 */
+	    				animation: ani4 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+						@keyframes ani4 {
+							from { top: 20px; }
+	    					to { top: 80px; }
+						}
+					}
+					.pipe2 {
+						right: -15px;
+						bottom: -145px;
+					}
+				}
+				&.wiiu {
+					background-color: #0196D1;
+					.dropdown-grid {
+						.grid-col {
+							.grid-block {
+								background-color: #3cb1d9;
+								&:hover {
+									box-shadow: 0 0 0 4px #3cb1d9;
+								}
+								.bg-layer {
+									&.wiiu-full {
+										background-image: url('images/wiiu-bluebg.jpg');	
+									}
+									&.what-is-wiiu {
+										background-image: url('images/what-is-wiiu-bluebg.jpg');	
+										background-position: center 74px;
+									}
+									&.wiiu-builtinsoftware {
+										background-image: url('images/built-in-software-bluebg.jpg');	
+										background-position: center 80px;
+									}
+									&.wiiu-features {
+										background-image: url('images/wiiu-features-bluebg.jpg');	
+										background-position: center 76px;
+									}
+									&.wiiu-accessories {
+										background-image: url('images/accessories-bluebg.jpg');	
+										background-position: center 76px;
+									}
+									&.wiiu-games {
+										background-image: url('images/games-bluebg.jpg');	
+										background-position: center 72px;
+									}
+								}
+							}
+						}
+					}
+					.mario-running {
+						left: -80px;
+						bottom: 50px;
+						-webkit-animation: fojacked 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; /* Safari 4.0 - 8.0 */
+	    				animation: fojacked 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+						@keyframes fojacked {
+							from { left: -130px; }
+	    					to { left: -90px; }
+						}
+					}
+					.question-block2 {
+						right: 0px;
+						bottom: 230px;
+					}
+					.mushroom {
+						right: -55px;
+						bottom: 50px;
+					}
+					.goomba-close-mouth {
+						right: 80px;
+						bottom: 40px;
+						transform: rotate(0deg);
+						-webkit-animation: fojacked2 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; /* Safari 4.0 - 8.0 */
+	    				animation: fojacked2 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+						@keyframes fojacked2 {
+							from { transform: rotate(10deg); }
+	    					to { transform: rotate(-19deg); }
+						}
+					}
+				}
+				&.gamestore {
+					background-color: #FF7D00;
+					.dropdown-grid {
+						.grid-col {
+							.grid-block {
+								background-color: $orange1;
+								&:hover {
+									box-shadow: 0 0 0 4px #F7A324;
+								}
+								.bg-layer {
+									&.game-store {
+										background-image: url('images/game-store-games.jpg');
+										background-position: center 80px;
+									}
+									&.switch-games {
+										background-image: url('images/switch-games-orangebg.jpg');
+									}
+									&.mobile-games {
+										background-image: url('images/mobile-games-orangebg.jpg');
+										background-position: center 50px;
+									}
+									&.threeds-games {
+										background-image: url('images/3ds-games-orangebg.jpg');
+										background-position: center 80px;
+									}
+									&.sales-deals {
+										background-image: url('images/salesdeals-orangebg.jpg');
+										background-position: center 60px;
+									}
+									&.wiiu-games {
+										background-image: url('images/wiiu-games-orangebg.jpg');
+									}
+									&.coming-soon {
+										background-image: url('images/star-orangebg.jpg');
+									}
+								}
+							}
+						}
+					}
+					.brick {
+						top: 120px;
+						left: 20px;
+					}
+					.bobomb {
+						bottom: 40px;
+						left: -20px;
+						-webkit-animation: blahse 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; /* Safari 4.0 - 8.0 */
+	    				animation: blahse 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+						@keyframes blahse {
+							from { left: -50px; }
+	    					to { left: -20px; }
+						}
+					}
+					.bowser {
+						bottom: 40px;
+						left: calc(100% - 225px);
+						-webkit-animation: grow 2s infinite alternate; /* Safari 4.0 - 8.0 */
+	    				animation: grow 2s infinite alternate;
+						@keyframes grow {
+							from { transform: scale(1); }
+	    					to { transform: scale(1.1); }
+						}
+					}
+				}
+				&.amiibo {
+					background: #fff url(images/bg-amiibo.png);
+					.dropdown-grid {
+						.grid-col {
+							.grid-block {
+								.bg-layer {
+									&.mario-amiibo {
+										background-image: url('images/mario-amiibo-bluebg.jpg');
+										background-position: center 84px;	
+									}
+									&.what-is {
+										background-image: url('images/what-is-amiibo-redbg.jpg');
+									}
+									&.compatability {
+										background-image: url('images/compatibility-greenbg.jpg');
+									}
+									&.lineup {
+										background-image: url('images/lineup-bluebg.jpg');
+										background-position: center 80px;	
+									}
+									&.games {
+										background-image: url('images/games-lgreenbg.jpg');
+									}
+								}
+								&.blue {
+									background-color: #25adf3;
+									&:hover {
+										box-shadow: 0 0 0 4px #25adf3;
+									}
+								}
+								&.green {
+									background-color: #009682;
+									&:hover {
+										box-shadow: 0 0 0 4px #009682;
+									}
+								}
+								&.purple {
+									background-color: #e62d8c;
+									&:hover {
+										box-shadow: 0 0 0 4px #e62d8c;
+									}
+								}
+								&.lightgreen {
+									background-color: #a5c80f;
+									&:hover {
+										box-shadow: 0 0 0 4px #a5c80f;
+									}
+								}
+							}
+						}
+					}
+				}
+				&.play-nintendo {
+					background-color: #FF3F3F;
+					.dropdown-grid {
+						.grid-col {
+							.grid-block {
+								background-color: #fa6a6a;
+								&:hover {
+									box-shadow: 0 0 0 4px #fa6a6a;
+								}
+								.bg-layer {
+									&.play-nintendo {
+										background-image: url('images/play-nintendo-pinkbg.jpg');
+										background-position: center 90px;	
+									}
+									&.friends {
+										background-image: url('images/donkey-kong-diddy-kong-pinkbg.jpg');	
+									}
+									&.parents {
+										background-image: url('images/baby-mario-and-yoshi-pinkbg.jpg');	
+									}
+									&.explore {
+										background-image: url('images/lakitu-pinkbg.jpg');	
+										background-position: center 57px;	
+									}
+									&.news-tips {
+										background-image: url('images/peach-pinkbg.jpg');	
+										background-position: center 57px;	
+									}
+								}
+							}
+						}
+					}
+					.lakitu {
+						left: -10px;
+						top: 50px;
+						-webkit-animation: ani4 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; /* Safari 4.0 - 8.0 */
+	    				animation: ani4 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+						@keyframes ani4 {
+							from { top: 50px; }
+	    					to { top: 100px; }
+						}
+					}
+					.spiny {
+						left: -10px;
+						bottom: 15px;
+						-webkit-animation: hotsoup 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; /* Safari 4.0 - 8.0 */
+	    				animation: hotsoup 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+						@keyframes hotsoup {
+							from { left: -10px; }
+	    					to { left: -50px; }
+						}
+					}
+					.bobomb {
+						right: 450px;
+						bottom: 15px;
+						-webkit-animation: swizzlefest 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; /* Safari 4.0 - 8.0 */
+	    				animation: swizzlefest 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+						@keyframes swizzlefest {
+							from { right: 450px; }
+	    					to { right: 390px; }
+						}
+					}
+					.goomba {
+						right: 230px;
+						bottom: 15px;
+						-webkit-animation: banana 3s ease-in-out infinite alternate; /* Safari 4.0 - 8.0 */
+	    				animation: banana 3s ease-in-out infinite alternate;
+						@keyframes banana {
+							from { right: 230px; }
+	    					to { right: 250px; }
+						}
+					}
+					.mario-yoshi {
+						right: -230px;
+						bottom: 15px;
+						-webkit-animation: yay 3s linear infinite alternate; /* Safari 4.0 - 8.0 */
+	    				animation: yay 3s linear infinite alternate;
+						@keyframes yay {
+							from { right: -230px; }
+	    					to { right: -190px; }
+						}
+					}
+				}
+				&.support {
+					background-color: #00BFF3;
+					.dropdown-grid {
+						.grid-col {
+							.grid-block {
+								background-color: #55d4f7;
+								&:hover {
+									box-shadow: 0 0 0 4px #55d4f7;
+								}
+								.bg-layer {
+									&.support {
+										background-image: url('images/mario-bluebg.jpg');
+										background-position: center 90px;	
+									}
+									&.icon {
+										background-size: 95px;
+										background-position: center 70px;
+									}
+									&.switch {
+										background-image: url('images/icon-joy-con.svg');	
+									}
+									&.digital-purchases {
+										background-image: url('images/digital-purchases.svg');	
+										background-size: 115px;
+										background-position: center 82px;
+									}
+									&.threeds-support {
+										background-image: url('images/threeds-support.svg');	
+										background-size: 165px;
+										background-position: center 82px;
+									}
+									&.internet-connections {
+										background-image: url('images/internet-connections.svg');	
+										background-position: center 60px;
+									}
+									&.support-forums {
+										background-image: url('images/support-forums.svg');
+										background-position: center 80px;	
+									}
+									&.set-up-repair {
+										background-image: url('images/set-up-repair.svg');
+										background-position: center 80px;	
+									}
+								}
+							}
+						}
+					}
+					.question-block {
+						left: 15px;
+						top: 150px;
+
+					}
+					.goomba-open-mouth {
+						left: 70px;
+						bottom: 90px;
+						-webkit-animation: fojacked2 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; /* Safari 4.0 - 8.0 */
+	    				animation: fojacked2 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+						@keyframes fojacked2 {
+							from { transform: rotate(0deg); }
+	    					to { transform: rotate(-19deg); }
+						}
+					}
+					.goomba-close-mouth {
+						left: -40px;
+						bottom: 0px;
+						-webkit-animation: fojacked3 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; /* Safari 4.0 - 8.0 */
+	    				animation: fojacked3 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+						@keyframes fojacked3 {
+							from { transform: rotate(-30deg); }
+	    					to { transform: rotate(19deg); }
+						}
+					}
+					.toads {
+						right: 50px;
+						bottom: 100px;
+						-webkit-animation: ani5 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; /* Safari 4.0 - 8.0 */
+	    				animation: ani5 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+						@keyframes ani5 {
+							from { right: 50px; }
+	    					to { right: 40px; }
+						}
+					}
+					.toads-jumping {
+						right: -90px;
+						bottom: 115px;
+						-webkit-animation: ani6 3s ease-in-out infinite alternate; /* Safari 4.0 - 8.0 */
+	    				animation: ani6 3s ease-in-out infinite alternate;
+						@keyframes ani6 {
+							from { transform: rotate(-10deg); }
+	    					to { transform: rotate(0deg); }
+						}
+					}
+				}
+				&.my-nintendo {
+					background-color: #fff;
+					background-image: radial-gradient(#efefef 25%, transparent 26%), radial-gradient(#efefef 25%, transparent 26%);
+					background-size: 20px 20px;
+					background-position: 0 0, 10px 10px;
+					.dropdown-grid {
+						.grid-col {
+							.grid-block {
+								background-color: $nintendoRed;
+								&:hover {
+									box-shadow: 0 0 0 4px #e60012;
+								}
+								.bg-layer {
+									&.my-nintendo {
+										background-image: url('images/my-nintendo-mii-redbg.jpg');
+										background-position: center 90px;	
+									}
+									&.what-is {
+										background-image: url('images/my-nintendo.svg');	
+										background-size: 125px;
+									}
+									&.about-points {
+										background-image: url('images/about-points-redbg.jpg');	
+										background-position: center 75px;
+									}
+									&.redeem {
+										background-image: url('images/rewards.svg');	
+										background-size: 130px;
+										background-position: center 42px;
+									}
+									&.earn-points {
+										background-image: url('images/earn-points.svg');
+										background-position: center 60px;	
+										background-size: 115px;
+									}
+								}
+							}
+						}
+					}
+					.question-block {
+						left: 15px;
+						top: 150px;
+
+					}
+					.goomba-open-mouth {
+						left: 70px;
+						bottom: 90px;
+						-webkit-animation: fojacked2 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; /* Safari 4.0 - 8.0 */
+	    				animation: fojacked2 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+						@keyframes fojacked2 {
+							from { transform: rotate(0deg); }
+	    					to { transform: rotate(-19deg); }
+						}
+					}
+					.goomba-close-mouth {
+						left: -40px;
+						bottom: 0px;
+						-webkit-animation: fojacked3 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; /* Safari 4.0 - 8.0 */
+	    				animation: fojacked3 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+						@keyframes fojacked3 {
+							from { transform: rotate(-30deg); }
+	    					to { transform: rotate(19deg); }
+						}
+					}
+					.toads {
+						right: 50px;
+						bottom: 100px;
+						-webkit-animation: ani5 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate; /* Safari 4.0 - 8.0 */
+	    				animation: ani5 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite alternate;
+						@keyframes ani5 {
+							from { right: 50px; }
+	    					to { right: 40px; }
+						}
+					}
+					.toads-jumping {
+						right: -90px;
+						bottom: 115px;
+						-webkit-animation: ani6 3s ease-in-out infinite alternate; /* Safari 4.0 - 8.0 */
+	    				animation: ani6 3s ease-in-out infinite alternate;
+						@keyframes ani6 {
+							from { transform: rotate(-10deg); }
+	    					to { transform: rotate(0deg); }
+						}
+					}
+				}
+			}
+		}
+	}
+	&.headerSticky {
+		transform: translateY(-86px);
+	}
+}
+
+/*
+  Bootstrap Carousel Fade Transition (for Bootstrap 3.3.x)
+  CSS from:       http://codepen.io/transportedman/pen/NPWRGq
+  and:            http://stackoverflow.com/questions/18548731/bootstrap-3-carousel-fading-to-new-slide-instead-of-sliding-to-new-slide
+  Inspired from:  http://codepen.io/Rowno/pen/Afykb 
+*/
+
+.carousel-control {
+	background-image: none !important;
+	opacity: 1 !important;
+	bottom: 78px;
+}
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {
+	font-size: 36px;
+    font-weight: 100;
+    background-color: rgba(0,0,0,0.27);
+    border: 5px solid rgba(255,255,255,0.27);
+    border-radius: 50%;
+    display: block;
+    padding: 12px 12px;
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2576bc;
+    opacity: 0;
+    transition: opacity 0.5s;
+    &:hover {
+    	color: #3aa4ff;
+    }
+}
+
+#myCarousel:hover {
+	.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {
+		opacity: 1 !important;
+	}
+}
+
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  transition-property: opacity;
+  p {
+  	    color: #ccc;
+    	position: absolute;
+    	z-index: 1;
+    	bottom: 14px;
+    	right: 20px;
+    	letter-spacing: 1px;
+    	font-family: 'montserrat-light';
+    	font-style: italic;
+    	font-size: .7em;
+  }
+  &.zelda {
+  	background-color: #324b6a;
+  }
+  &.mario {
+  	background-color: #facd00;
+  }
+  &.splatoon, &.pokemon {
+  	background-color: #000;
+  }
+  .overlay-bar {
+  	background-color: rgba(0,0,0,.7);
+  	position: absolute;
+  	width: 100%;
+  	bottom: 0;
+  	padding: 8px 15px;
+  	.bar-container {
+  		max-width: 960px;
+  		margin: 0 auto;
+  		display: flex;
+  		justify-content: space-between;
+  		.esrb-rating {
+  			width: 180px;
+  			img {
+  				width: 100%;
+  			}
+  		}
+  		h1 {
+  			color: #fff;
+  			font-weight: 300;
+  			font-size: 2em;
+  			letter-spacing: 1px;
+  			margin-top: 25px;
+  			margin-right: 10px;
+  		}
+  		.button {
+  			background-color: #2576bc;
+  			color: #fff;
+  			height: 50px;
+    		display: flex;
+    		align-items: center;
+    		padding: 10px 20px;
+    		margin-top: 17px;
+    		font-size: 20px;
+    		letter-spacing: 1px;
+    		transition: .3s;
+    		&:hover {
+    			background-color: #3aa4ff;
+    		}
+  		}
+  	}
+  }
+}
+
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+
+/*
+  WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
+  Need to override the 3.3 new styles for modern browsers & apply opacity
+*/
+@media all and (transform-3d), (-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+}
+
+.content {
+	position: relative;
+	top: 68px;
+	z-index: 1;
+	background-color: #fff;
+	.carousel {
+		text-align: center;
+		margin-bottom: 50px;
+		.carousel-inner {
+			text-align: center;
+			.item {
+				text-align: center;
+				img {
+					display: inline;
+				}
+			}
+		}
+	}
+	.small-carousel-wrap {
+		max-width: 980px;
+		margin: 0 auto 200px;
+		position: relative;
+		.small-carousel {
+			overflow-x: hidden;
+			white-space: nowrap;
+			padding: 0 20px;
+			.small-carousel-item {
+				margin: 0 30px 0 0;
+				display: inline-block;
+				height: 100%;
+				border: 1px solid transparent;
+				position: relative;
+				right: 0;
+				transition: .5s;
+				&:hover {
+					border-color: red;
+				}
+				&.shift {
+					right: 982px;
+				}
+			}
+		}
+		.arrow-control {
+			position: absolute;
+			top: 60px;
+			background:linear-gradient(#eee, #fdfdfd);
+			border: 1px solid #ccc;
+			display: block;
+			z-index: 1;
+			width: 40px;
+			height: 40px;
+			font-weight: 100;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			cursor: pointer;
+			color: steelblue;
+			&.left {
+				left: -10px;
+				.fa {
+					padding-right: 4px;
+				}
+			}
+			&.right {
+				right: -10px;
+				.fa {
+					padding-left: 4px;
+				}
+			}
+			.fa {
+				font-weight: 100;
+				font-size: 25px;
+			}
+			&:hover {
+				color: #25adf3;
+			}
+		}
+		.indicators-wrap {
+			height: 100px;
+			width: 185px;
+			margin: 0 auto;
+			text-align: center;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			.scarousel-indicator {
+				background-color: #ddd;
+				height: 4px;
+				width: 35px;
+				border-radius: 3px;
+				cursor: pointer;
+				&.active {
+					background-color: #1660a0 !important;
+				}
+				&:hover {
+					background-color: #3aa4ff;
+				}
+			}
+		}
+	}
+}	
+.filler {
+	padding: 20px;
+}
+
+@media screen and (max-width: 900px) {
+	.header {
+		.header-content {
+			ul {
+				&.search-region-login {
+					li {
+						input {
+							border: none;
+							text-align: right;
+						}
+					}
+				}
+			}
+		}
+	}
+}
